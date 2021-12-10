@@ -4,13 +4,11 @@ import Logo from "../pages/HeaderComp/Logo";
 const UserLeftBlock = () => {
   return (
     <div className="userLeftBlock">
-      <main>
-        <Logo />
-      </main>
+      <main>{/* <Logo /> */}</main>
       <div style={{ marginLeft: "14px" }}>
         <ul>
           <li>
-            <a href="">
+            <a href="/">  
               <svg
                 role="img"
                 height="24"

@@ -193,6 +193,10 @@ p.content {
   font-weight: bold;
   border: none;
 }
+.sliderLeft3 button a {
+  text-decoration: none;
+  color: #2941ab;
+}
 /* .sliderRight3 figure {
   background:url( )
   background-repeat: no-repeat;

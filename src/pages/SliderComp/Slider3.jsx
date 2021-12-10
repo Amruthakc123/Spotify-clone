@@ -10,7 +10,9 @@ const Slider3 = () => {
           <p className="content">
             Millions of songs and podcasts. No credit card needed.
           </p>
-          <button>GET SPOTIFY FREE</button>
+          <button>
+            <a href="/userhome">GET SPOTIFY FREE</a>
+          </button>
         </div>
         <div className="sliderRight3">
           <figure></figure>

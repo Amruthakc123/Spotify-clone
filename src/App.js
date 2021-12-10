@@ -7,21 +7,26 @@ import Home from "./pages/Home";
 import Login from "./components/AuthComp/Login";
 import Signup from "./components/AuthComp/Signup";
 import { AuthContextApi } from "./Apis/AuthContext";
-
+import Spinner from "./pages/spinners/Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UserHome from "./UserComponents/UserHome";
+// import MyFirstPortal from "./pages/MyFirstPortal";
 
 const App = () => {
-  let USER = useContext(AuthContextApi);
+  let AUTH = useContext(AuthContextApi);
 
   return (
     <section id="spotifyMainBlock">
       <article>
         <Router>
-          <header>{!USER ? <Navbar /> : ""}</header>
+          <header>
+            <Navbar />
+          </header>
+          {/* <header>{!USER ? <Navbar /> : ""}</header> */}
           {/* toastify import */}
           <ToastContainer />
+          {/* <MyFirstPortal/> */}
           <main>
             {/* <Slider /> */}
             {/* dynamic routing starts here  */}
@@ -37,9 +42,13 @@ const App = () => {
               </Route>
 
               {/* start authentication routes */}
-              <Route path="/UserHome">
-                <UserHome />
-              </Route>
+              {AUTH === null ? (
+                <Spinner />
+              ) : (
+                <Route path="/userhome">
+                  <UserHome />
+                </Route>
+              )}
 
               {/* end of authentication routes */}
 

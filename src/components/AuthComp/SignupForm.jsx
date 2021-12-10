@@ -47,6 +47,12 @@ const SignupForm = ({ history }) => {
         User_Data.user.sendEmailVerification();
         toast.info(ConfirmMessage);
 
+        User_Data.user.updateProfile({
+          displayName: profile_name,
+          photoURL:
+            "https://image.shutterstock.com/image-vector/default-avatar-profile-icon-social-260nw-1677509740.jpg",
+        });
+
         // js way of navigating to login after sign up(page is refreshed)
         // window.location.assign("/login");
         // console.log(User_Data);
